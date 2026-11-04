@@ -14,7 +14,7 @@ RelayResolve reconciles Across transfers from Ethereum to Base. It records wheth
 3. An unresolved case can be reviewed again. A verified case can be finalized by supplying the current decision digest. A finalized decision is immutable.
 4. Read the finalized record from the public dashboard or call `get_case(source_tx, deposit_id)`.
 
-The public dashboard opens the live refund case automatically. Browser write controls use an optional disposable memory-only StudioNet signer. For deployment and the recorded demo writes, use [GenLayer Studio](https://studio.genlayer.com/run-debug) and its built-in account, with **Normal (Full Consensus)** selected. Upload `contracts/relay_resolve.py`, deploy with no constructor arguments, and call `open_case`, `review`, and `finalize`. No extension is needed.
+The public dashboard opens the live refund case automatically. Browser write controls use an optional disposable memory-only StudioNet signer. For deployment and the recorded demo writes, use [GenLayer Studio](https://studio.genlayer.com/run-debug) and its built-in account, with **Normal (Full Consensus)** selected. Upload `contracts/relay_resolve.py`, deploy with no constructor arguments, and call `open_case`, `review`, and `finalize`. No extension is needed. Paste a Studio transaction hash into the dashboard tracker to follow its finality and execution result without a browser signer.
 
 ## Build and verify
 

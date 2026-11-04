@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="RelayResolve reconciles Across Ethereum-to-Base deposits, delivery and refunds using GenLayer validator consensus.">
+<title>RelayResolve | Cross-chain transfer disputes</title>
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="top"><a class="brand" href="./"><span class="mark" aria-hidden="true">⇄</span>RelayResolve</a><span class="network"><i></i> GENLAYER STUDIONET</span></header>
+<main>
+<section class="intro"><p class="eyebrow">TRANSFER DISPUTE RESOLUTION</p><h1>Follow the funds.</h1><p>Reconcile an Across deposit with its destination fill or origin refund. GenLayer validators independently check the records before a decision can finalize.</p><div class="route"><span>ETHEREUM</span><span aria-hidden="true">→</span><span>BASE</span><span class="muted">/ ACROSS</span></div></section>
+<div class="grid">
+<section class="card lookup"><p class="eyebrow">01 / FIND A TRANSFER</p><h2>Case lookup</h2><form id="lookup">
+<label for="hash">Ethereum deposit transaction</label><input id="hash" name="hash" required maxlength="66" spellcheck="false" placeholder="0x…">
+<label for="id">Across deposit ID</label><input id="id" name="id" required maxlength="78" inputmode="numeric" placeholder="4876368">
+<div class="actions"><button class="primary" type="submit">Look up case</button><button id="example" type="button">Load refund example</button></div></form>
+<p id="lookup-status" class="muted" role="status"></p>
+</section>
+<section class="card result"><p class="eyebrow">02 / INSPECT THE RECORD</p><div class="result-title"><h2>Resolution</h2><span id="badge" class="pill">NO CASE LOADED</span></div><p id="explanation" class="muted">Look up a deposit to read finalized GenLayer state.</p>
+<dl id="facts"></dl><div id="evidence" class="links"></div>
+</section>
+<section class="card controls"><p class="eyebrow">03 / SUBMIT TO GENLAYER</p><h2>Case actions</h2>
+<p class="muted">Use the built-in account in Studio or create a disposable browser signer for zero-value StudioNet writes.</p>
+<div class="actions"><button id="connect" type="button">Create test signer</button><a href="https://studio.genlayer.com/run-debug" target="_blank" rel="noopener noreferrer">Open Studio ↗</a></div>
+<p id="account" class="muted small">Read-only mode</p>
+<div class="actions"><button id="open" disabled>Open case</button><button id="review" disabled>Review evidence</button><button id="finalize" disabled>Finalize decision</button></div>
+</section>
+<section class="card transactions"><p class="eyebrow">04 / TRACK A WRITE</p><h2>Transaction activity</h2><form id="track-form">
+<label for="track-hash">StudioNet transaction hash</label><input id="track-hash" maxlength="66" spellcheck="false" placeholder="Paste a transaction from Studio" required>
+<button id="track-submit" type="submit">Track transaction</button></form><p id="tx-state" class="muted" role="status">No transaction tracked.</p><a id="tx-link" hidden target="_blank" rel="noopener noreferrer">View transaction ↗</a><button id="resume" hidden>Check again</button><p class="small muted">A submitted or accepted transaction remains pending until its execution is finalized.</p></section>
+</div>
+</main>
+<footer><span>RelayResolve · StudioNet 61999</span><div><a id="contract-link">Contract ↗</a><a href="https://github.com/amzar1st/RelayResolve-Cross-chain-transfer-dispute-resolution">Source ↗</a></div></footer>
+</body>
+</html>

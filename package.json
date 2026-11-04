@@ -1,0 +1,1 @@
+{"name":"relayresolve","private":true,"type":"module","scripts":{"test":"python3 -m unittest discover -s tests -v && node --test tests/*.test.js","build":"node scripts/build.mjs"},"dependencies":{"genlayer-js":"1.1.8","viem":"2.57.16"},"devDependencies":{"esbuild":"0.28.2"}}

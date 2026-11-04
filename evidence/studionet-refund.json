@@ -1,0 +1,102 @@
+{
+  "chainId": 61999,
+  "address": "0x497B0005C4E84d5D43E7c8EAC728b36eEFAD80c4",
+  "sourceSha256": "dbb572b327f0d30db2278ed77e962672d51a923b330c42a9e4ecfa921f49bca2",
+  "transactions": [
+    {
+      "method": "deploy",
+      "hash": "0x4affcbd1b91e5cd030d3e6baa1fac3cd27949f54e445e4c9ebde23588abb134e",
+      "status": 7,
+      "signer": "0x2Ca57A7DCe3243C4213B6443543bd86A3368e2d9",
+      "votes": {
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "agree",
+        "0x5D9Ee6E9aAF2F0b739314A52dd9Da57cd8866dA8": "idle",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "idle",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "agree"
+      }
+    },
+    {
+      "method": "open",
+      "hash": "0x69a2e9644fc2677691536419ceb217b73d5aa5fcf6593614ef3b61cef0a50c0a",
+      "status": 7,
+      "signer": "0x2Ca57A7DCe3243C4213B6443543bd86A3368e2d9",
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "agree",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "idle",
+        "0xcab45E3fe9cC9592B5C378E47734E022b7Df80c9": "agree"
+      }
+    },
+    {
+      "method": "review",
+      "hash": "0x14df04bb04dc7855f53061e57b01e6826fbbd7528a24c254ca7a32f7a2b6c2fe",
+      "status": 7,
+      "signer": "0x2Ca57A7DCe3243C4213B6443543bd86A3368e2d9",
+      "votes": {
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "agree",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "idle",
+        "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907": "agree",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "idle"
+      }
+    },
+    {
+      "method": "finalize",
+      "hash": "0x2cc919bae4fb33732c9ac378f1ec80b3b0451473adbc1cae73de1dedbf21e4bf",
+      "status": 7,
+      "signer": "0x2Ca57A7DCe3243C4213B6443543bd86A3368e2d9",
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "agree",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "idle",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "agree"
+      }
+    }
+  ],
+  "rejectedDuplicate": {
+    "hash": "0x1735082fa75354013c89c821b059f0873d52bbb656550bb9df347d1549f40aec",
+    "status": 7,
+    "execution": "failed"
+  },
+  "record": {
+    "decision": {
+      "bridge_status": "refunded",
+      "deposit": {
+        "block_hash": "0xad12f2f8a64a3cefb41fba749b5d285396536e97a00e371f0131b03f0ea92768",
+        "depositor": "0x4be66294c6bb5af0da8ad96f186dec0f712979e6",
+        "exclusive_relayer": "0x000000000000000000000000fd03abcadaf3f930fa4e37eb2f6ea3a44a41b7f0",
+        "exclusivity_deadline": 1793797707,
+        "fill_deadline": 1793799491,
+        "id": "4876368",
+        "input_amount": "295322271",
+        "input_token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "log_index": "0x1c4",
+        "message_size": 896,
+        "output_amount": "295280805",
+        "output_token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "recipient": "0xb852e653f8fbc099f06dc9d61e269517a4990b73"
+      },
+      "index_url": "https://app.across.to/api/deposit/status?originChainId=1&depositId=4876368",
+      "outcome": "REFUNDED",
+      "reason": "MATCHED_ACROSS_ORIGIN_REFUND",
+      "route": "Across / Ethereum to Base",
+      "settlement": {
+        "amount": "295322271",
+        "block_hash": "0xf228cc803bf8dca073de54b46e022bdac96f02eaa9f4a08a43e90b5c70c891ca",
+        "bundle": "30730",
+        "recipient": "0x4be66294c6bb5af0da8ad96f186dec0f712979e6",
+        "root_log": "0x44d",
+        "token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "transfer_log": "0x447",
+        "tx": "0x1d26ffb38ce115feb91ed35c9d73d1bfb1ba36136fb059c1ba1d5d1d55fe6ff1"
+      },
+      "source_tx": "0x966b1f2e6a5deacaa36c62db30ad63a3c0d933b7f1b0fd57842145691b012d46"
+    },
+    "decision_sha256": "9f728f6ec583b40b5bbc963ccab3e0bbfd6ff25caccd7eef2c9ac85fead2dba0",
+    "revision": 1,
+    "stage": "FINALIZED"
+  }
+}
