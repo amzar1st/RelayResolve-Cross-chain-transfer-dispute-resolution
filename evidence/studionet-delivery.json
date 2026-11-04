@@ -1,0 +1,81 @@
+{
+  "chainId": 61999,
+  "transactions": [
+    {
+      "method": "open",
+      "hash": "0xfb3b904b343074cb7d74aa9bd3fc57f4d61a6de8ffb1b10f5605977d55a4dacd",
+      "status": 7,
+      "signer": "0x2Ca57A7DCe3243C4213B6443543bd86A3368e2d9",
+      "votes": {
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "agree",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "idle",
+        "0x5D9Ee6E9aAF2F0b739314A52dd9Da57cd8866dA8": "agree",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "idle"
+      }
+    },
+    {
+      "method": "review",
+      "hash": "0x0f7bd519e68999e427ecbfc52b3c16ebb722c19a12fac5d0c1aae5467dcfc147",
+      "status": 7,
+      "signer": "0x2Ca57A7DCe3243C4213B6443543bd86A3368e2d9",
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "agree",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "idle",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "agree",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "idle"
+      }
+    },
+    {
+      "method": "finalize",
+      "hash": "0x227715ed4ae03db1ef02365539dc9c57ab7788d25f5ac000be9ecfd3a230f979",
+      "status": 7,
+      "signer": "0x2Ca57A7DCe3243C4213B6443543bd86A3368e2d9",
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "idle",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "idle",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "agree"
+      }
+    }
+  ],
+  "record": {
+    "decision": {
+      "bridge_status": "filled",
+      "deposit": {
+        "block_hash": "0x8bf4093bb554a7170da2fa2924decef8e1cfda81f8932cd0c3ae07c64fd5839e",
+        "depositor": "0x3ae28806db12a927f122e8db41663f1678374d94",
+        "exclusive_relayer": "0x000000000000000000000000394311a6aaa0d8e3411d8b62de4578d41322d1bd",
+        "exclusivity_deadline": 1793789895,
+        "fill_deadline": 1793796851,
+        "id": "4875863",
+        "input_amount": "4956250",
+        "input_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "log_index": "0x24",
+        "message_size": 0,
+        "output_amount": "4951764",
+        "output_token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "recipient": "0x3ae28806db12a927f122e8db41663f1678374d94"
+      },
+      "index_url": "https://app.across.to/api/deposit/status?originChainId=1&depositId=4875863",
+      "outcome": "DELIVERED",
+      "reason": "MATCHED_ACROSS_DESTINATION_FILL",
+      "route": "Across / Ethereum to Base",
+      "settlement": {
+        "amount": "4951764",
+        "block_hash": "0x14f81df32866dc8c88405dfb58abdeb2acab4ce129bca0b96dd48d4a17f97a7f",
+        "fill_log": "0xf7",
+        "recipient": "0x3ae28806db12a927f122e8db41663f1678374d94",
+        "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "transfer_log": "0xf8",
+        "tx": "0xf5bd4a57f4515b8f256b7e0e032aa849ba62ad6b4896d468019d7e63ef84227a"
+      },
+      "source_tx": "0xf67d35206c20adcaae8934f0c3d91cb3533dc445ee3ac850aee4d527ecb5df04"
+    },
+    "decision_sha256": "a9f5318549f7d9fae744726279924044a62d6d7f9c66cc0cee4aa56d5a4452fc",
+    "revision": 1,
+    "stage": "FINALIZED"
+  }
+}

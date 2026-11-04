@@ -9,7 +9,7 @@ export const publicClient = client();
 export const readCase = async (hash, id) => {
   const data = await publicClient.readContract({
     address: deployment.address, functionName: 'get_case', args: [hash, id],
-    transactionHashVariant: 'LATEST_FINAL',
+    transactionHashVariant: 'latest-final',
   });
   return data === '' ? null : JSON.parse(data);
 };
