@@ -21,8 +21,10 @@ export function testSigner() {
 
 export function receiptState(tx) {
   const status = tx?.status;
-  if (['UNDETERMINED', 'CANCELED', 'CANCELLED', 'REVERTED', 8, '8'].includes(status)) return 'failed';
+  if (['UNDETERMINED', 'CANCELED', 'CANCELLED', 'REVERTED', 6, '6', 8, '8'].includes(status)) return 'failed';
   if (!['FINALIZED', 7, '7'].includes(status)) return 'pending';
+  const consensus = tx.result_name ?? tx.result;
+  if (![1, '1', 6, '6', 'AGREE', 'MAJORITY_AGREE', 'SUCCESS'].includes(consensus)) return 'failed';
   const execution = tx.consensus_data?.leader_receipt;
   const leader = Array.isArray(execution) ? execution.find(row => row.mode === 'leader') || execution[0] : execution;
   return leader?.execution_result === 'SUCCESS' ? 'success' : 'failed';
@@ -53,4 +55,18 @@ export async function follow(hash, update, { retries = 90, interval = 3000, fetc
     if (attempt + 1 < retries) await new Promise(resolve => setTimeout(resolve, interval));
   }
   return 'unknown';
+}
+
+
+export async function reportId(hash, id, decisionSha256, url, sha256, label) {
+  const bytes = new TextEncoder().encode(JSON.stringify([hash, id, decisionSha256, url, sha256, label]));
+  const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
+}
+
+export async function readReport(id) {
+  const data = await publicClient.readContract({
+    address: deployment.address, functionName: 'get_report', args: [id], transactionHashVariant: 'latest-final',
+  });
+  return data === '' ? null : JSON.parse(data);
 }

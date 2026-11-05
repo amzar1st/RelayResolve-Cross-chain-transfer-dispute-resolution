@@ -1,0 +1,17 @@
+{
+  "chainId": 61999,
+  "address": "0xBdb03Bdb95C1A33a0348a513Cd6A6b1e2C138B69",
+  "transactions": {
+    "deploy": "0x63000031e071afacda8b99bd3c0947898aadbc11bb87e4544a1c3fdf9e3d3715",
+    "refundOpen": "0x9d528ee223ea1abcad6ea0fb2e0d9c84087515f28bd7ec33279c0186a2ac2cd3",
+    "refundReview": "0xc15c786db4476d8dcf7eed26acc198fd8b79579cdfa71cdea6f1e3762b3bdc0f",
+    "refundFinalize": "0xd33ecb2498057e198bacd7776c6de270a037ada4af5c664a18c5f5ca17fbf2d8",
+    "recoveryInterpretation": "0xb8bfc0c7ab503cb7410559bab2f2da56ea0954fb8afe443033d888f688757c8e",
+    "deliveryOpen": "0x4627773d662a6880d3e03217699e642fb854ca4d10d78d01082242dcb7a95c32",
+    "deliveryReview": "0x5549dad8d0a314567eaf091d8e658e0dfa4ff38b98a21b46a0cb01499a6243cd",
+    "deliveryFinalize": "0x5de8912346301bcaf8200cbbc92318e9e890f7e27de7fc39c81808862f14bcf1",
+    "protocolPolicyInterpretation": "0xfb90ab492ee77effdbf0de4ac28271d8b0785c144aedf6455b0849f06321bd03"
+  },
+  "rejectedInterpretation": "0x3c397c444b233c981346d6f591ca906f1e4b03f6a8943dfd563471f7a334e884",
+  "legacyV1Address": "0x497B0005C4E84d5D43E7c8EAC728b36eEFAD80c4"
+}

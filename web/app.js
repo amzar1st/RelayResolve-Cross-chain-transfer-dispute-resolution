@@ -1,5 +1,6 @@
 import { deployment } from './deployment.js';
-import { follow, readCase, submit, testSigner, validHash } from './chain.js';
+import { reportSources } from './reports.js';
+import { follow, readCase, readReport, reportId, submit, testSigner, validHash } from './chain.js';
 
 const byId = id => document.getElementById(id);
 const hashField = byId('hash');
@@ -22,6 +23,8 @@ let signer;
 let pendingHash;
 let busy = false;
 let lookupVersion = 0;
+let reportVersion = 0;
+let currentReport;
 
 byId('contract-link').href = `${deployment.explorer}/address/${deployment.address}`;
 function buttons() {
@@ -34,6 +37,9 @@ function buttons() {
   byId('connect').disabled = busy || Boolean(signer);
   resume.disabled = busy;
   byId('track-submit').disabled = busy;
+  byId('report-review').disabled = !enabled || !active.record?.decision || Boolean(currentReport);
+  byId('report-read').disabled = busy || !active?.record?.decision;
+  byId('delivery-example').disabled = busy;
 }
 
 function link(container, label, url) {
@@ -87,6 +93,7 @@ function render() {
 }
 
 async function lookup() {
+  clearReport();
   const version = ++lookupVersion;
   const hash = hashField.value.trim().toLowerCase();
   const id = idField.value.trim();
@@ -103,6 +110,7 @@ async function lookup() {
     active = { hash, id, record };
     lookupStatus.textContent = 'Finalized state loaded.';
     render();
+    await loadReport();
   } catch {
     if (lookupVersion === version) lookupStatus.textContent = 'StudioNet read failed. Check your connection and try again.';
   }
@@ -111,13 +119,15 @@ async function lookup() {
 function example() {
   hashField.value = deployment.exampleHash;
   idField.value = deployment.exampleId;
+  active = undefined;
+  selectReport('replay');
   return lookup();
 }
 
 async function track(hash) {
   pendingHash = hash;
   const txLink = byId('tx-link');
-  txLink.href = `${deployment.explorer}/transactions/${hash}`;
+  txLink.href = `${deployment.explorer}/tx/${hash}`;
   txLink.hidden = false;
   byId('track-hash').value = hash;
   resume.hidden = true;
@@ -138,6 +148,7 @@ byId('example').addEventListener('click', () => { void example(); });
 for (const field of [hashField, idField]) field.addEventListener('input', () => {
   ++lookupVersion;
   active = undefined;
+  clearReport();
   lookupStatus.textContent = '';
   render();
 });
@@ -194,5 +205,124 @@ resume.addEventListener('click', async () => {
     busy = false;
     buttons();
   }
+});
+const interpretations = {
+  STATUS_SUPERSEDED: 'The document supports the reported earlier status being overtaken by the verified settlement.',
+  CONSISTENT: 'The reported status agrees with the verified settlement under this document.',
+  RECOVERY_PENDING: 'The document describes recovery, while the receipts remain unresolved.',
+  CONTRADICTORY: 'The document does not reconcile the opposing terminal claims.',
+  INCONCLUSIVE: 'The report does not establish a supported interpretation.',
+};
+
+function clearReport() {
+  ++reportVersion;
+  currentReport = undefined;
+  byId('report-facts').replaceChildren();
+  byId('report-quote').hidden = true;
+  byId('report-source').hidden = true;
+  byId('report-status').textContent = 'Read the recorded interpretation or request a validator review.';
+}
+
+function reportArguments() {
+  const url = byId('report-url').value.trim();
+  const sha = byId('report-sha').value.trim();
+  const label = byId('reported-label').value;
+  if (!active?.record?.decision) throw Error('Look up a reviewed case first.');
+  if (!/^https:\/\/raw\.githubusercontent\.com\//.test(url) || !/^[0-9a-f]{64}$/.test(sha)) {
+    throw Error('Enter a commit-pinned source URL and lowercase SHA-256 digest.');
+  }
+  return [active.hash, active.id, url, sha, label];
+}
+
+function describeProvenance() {
+  const demo = byId('report-url').value.includes('/amzar1st/');
+  byId('report-provenance').textContent = demo
+    ? 'Synthetic recovery replay. The failed interface label is a test observation. The deposit and refund receipts are real.'
+    : 'Protocol publication. A general policy can explain status meanings. Transfer history is established by the linked receipts.';
+}
+
+async function loadReport() {
+  const version = ++reportVersion;
+  currentReport = undefined;
+  byId('report-facts').replaceChildren();
+  byId('report-quote').hidden = true;
+  byId('report-source').hidden = true;
+  buttons();
+  if (!active?.record?.decision) {
+    byId('report-status').textContent = 'Look up a reviewed case first.';
+    return;
+  }
+  try {
+    const [hash, id, url, sha, label] = reportArguments();
+    const key = await reportId(hash, id, active.record.decision_sha256, url, sha, label);
+    byId('report-status').textContent = 'Reading report consensus…';
+    const record = await readReport(key);
+    if (version !== reportVersion) return;
+    currentReport = record;
+    byId('report-status').textContent = record ? interpretations[record.interpretation] : 'No interpretation is recorded for this document and reported status.';
+    if (record) {
+      for (const [label, value] of [
+        ['Interpretation', record.interpretation], ['Evidence scope', record.scope],
+        ['Document check', record.evidence_status], ['Reported status', record.reported_label],
+        ['Label provenance', record.label_provenance], ['Receipt outcome', record.receipt_outcome],
+        ['Context SHA-256', record.context_sha256],
+      ]) {
+        const term = document.createElement('dt');
+        const detail = document.createElement('dd');
+        term.textContent = label;
+        detail.textContent = value;
+        byId('report-facts').append(term, detail);
+      }
+      byId('report-quote').textContent = record.quote;
+      byId('report-quote').hidden = !record.quote;
+      byId('report-source').href = url;
+      byId('report-source').hidden = false;
+    }
+  } catch (error) {
+    if (version === reportVersion) byId('report-status').textContent = error.shortMessage ?? error.message;
+  } finally {
+    buttons();
+  }
+}
+
+function selectReport(kind) {
+  const source = reportSources[kind];
+  byId('report-url').value = source.url;
+  byId('report-sha').value = source.sha256;
+  byId('reported-label').value = source.label;
+  clearReport();
+  describeProvenance();
+  void loadReport();
+}
+
+byId('replay-report').addEventListener('click', () => selectReport('replay'));
+byId('policy-report').addEventListener('click', () => selectReport('policy'));
+byId('report-read').addEventListener('click', () => { void loadReport(); });
+for (const id of ['report-url', 'report-sha', 'reported-label']) byId(id).addEventListener('input', () => {
+  clearReport();
+  describeProvenance();
+  buttons();
+});
+byId('report-form').addEventListener('submit', async event => {
+  event.preventDefault();
+  if (busy || pendingHash || !signer) return;
+  busy = true;
+  buttons();
+  try {
+    const args = reportArguments();
+    await track(await submit(signer, 'reconcile_report', args));
+  } catch (error) {
+    byId('report-status').textContent = error.shortMessage ?? error.message;
+  } finally {
+    busy = false;
+    buttons();
+  }
+});
+byId('delivery-example').addEventListener('click', () => {
+  hashField.value = deployment.deliveryHash;
+  idField.value = deployment.deliveryId;
+  active = undefined;
+  selectReport('policy');
+  void lookup();
 });
 void example();

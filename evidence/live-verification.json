@@ -1,0 +1,384 @@
+{
+  "chainId": 61999,
+  "address": "0xBdb03Bdb95C1A33a0348a513Cd6A6b1e2C138B69",
+  "sourceSha256": "05a9bb83cd0016e48d99f4775b015dafe6eb620d795ff9cee4bd6f0b37cc8116",
+  "transactions": [
+    {
+      "method": "deploy",
+      "hash": "0x63000031e071afacda8b99bd3c0947898aadbc11bb87e4544a1c3fdf9e3d3715",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "idle",
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "idle",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "agree",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    },
+    {
+      "method": "refundOpen",
+      "hash": "0x9d528ee223ea1abcad6ea0fb2e0d9c84087515f28bd7ec33279c0186a2ac2cd3",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "idle",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "agree",
+        "0xcab45E3fe9cC9592B5C378E47734E022b7Df80c9": "idle"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    },
+    {
+      "method": "refundReview",
+      "hash": "0xc15c786db4476d8dcf7eed26acc198fd8b79579cdfa71cdea6f1e3762b3bdc0f",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "idle",
+        "0x336458747913FE397be82c4F0926ACeB3ab13618": "agree",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "idle",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "agree"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    },
+    {
+      "method": "refundFinalize",
+      "hash": "0xd33ecb2498057e198bacd7776c6de270a037ada4af5c664a18c5f5ca17fbf2d8",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "agree",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "agree",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "idle",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "agree"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    },
+    {
+      "method": "recoveryInterpretation",
+      "hash": "0xb8bfc0c7ab503cb7410559bab2f2da56ea0954fb8afe443033d888f688757c8e",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x045291B293B9D68969c18B6637A8258038cf787A": "idle",
+        "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907": "idle",
+        "0x5e84e17266a193077728229751aC8A1dD24be146": "agree",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "agree"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    },
+    {
+      "method": "deliveryOpen",
+      "hash": "0x4627773d662a6880d3e03217699e642fb854ca4d10d78d01082242dcb7a95c32",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x045291B293B9D68969c18B6637A8258038cf787A": "agree",
+        "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "idle",
+        "0xB4EE99165ffe987E64B7b72e45a753309c501eef": "agree",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "idle",
+        "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "agree"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    },
+    {
+      "method": "deliveryReview",
+      "hash": "0x5549dad8d0a314567eaf091d8e658e0dfa4ff38b98a21b46a0cb01499a6243cd",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907": "agree",
+        "0xCe0B66448435cA53665C954705Abd753515594Cf": "agree",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "idle",
+        "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "idle"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    },
+    {
+      "method": "deliveryFinalize",
+      "hash": "0x5de8912346301bcaf8200cbbc92318e9e890f7e27de7fc39c81808862f14bcf1",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x007d6451555Df7765c707284F844137927aE4e5E": "agree",
+        "0x0eb3859451817bC25Cc717D4F676D54D0D3aD0aE": "idle",
+        "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "agree",
+        "0x63d72fE364368491E62a42B9C73c317Ce1ca8434": "idle",
+        "0x9C182DE7F93AdbE8ee3D62570613eC23c5683cAc": "agree"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    },
+    {
+      "method": "protocolPolicyInterpretation",
+      "hash": "0xfb90ab492ee77effdbf0de4ac28271d8b0785c144aedf6455b0849f06321bd03",
+      "status": 7,
+      "result": "MAJORITY_AGREE",
+      "signer": "0x3305FCC796ffDa2491D0b3F855d89017C41df091",
+      "leaderOnly": false,
+      "votes": {
+        "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "idle",
+        "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "idle",
+        "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "agree",
+        "0xb04cdDC4a6Ff6A0aDF715cfe00Fa307b901cebD4": "agree",
+        "0xcab45E3fe9cC9592B5C378E47734E022b7Df80c9": "agree"
+      },
+      "executions": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution": "SUCCESS"
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution": "SUCCESS"
+        }
+      ]
+    }
+  ],
+  "cases": {
+    "refund": {
+      "decision": {
+        "bridge_status": "refunded",
+        "deposit": {
+          "block_hash": "0xad12f2f8a64a3cefb41fba749b5d285396536e97a00e371f0131b03f0ea92768",
+          "depositor": "0x4be66294c6bb5af0da8ad96f186dec0f712979e6",
+          "exclusive_relayer": "0x000000000000000000000000fd03abcadaf3f930fa4e37eb2f6ea3a44a41b7f0",
+          "exclusivity_deadline": 1793797707,
+          "fill_deadline": 1793799491,
+          "id": "4876368",
+          "input_amount": "295322271",
+          "input_token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "log_index": "0x1c4",
+          "message_size": 896,
+          "output_amount": "295280805",
+          "output_token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "recipient": "0xb852e653f8fbc099f06dc9d61e269517a4990b73"
+        },
+        "index_url": "https://app.across.to/api/deposit/status?originChainId=1&depositId=4876368",
+        "outcome": "REFUNDED",
+        "reason": "MATCHED_ACROSS_ORIGIN_REFUND",
+        "route": "Across / Ethereum to Base",
+        "settlement": {
+          "amount": "295322271",
+          "block_hash": "0xf228cc803bf8dca073de54b46e022bdac96f02eaa9f4a08a43e90b5c70c891ca",
+          "bundle": "30730",
+          "recipient": "0x4be66294c6bb5af0da8ad96f186dec0f712979e6",
+          "root_log": "0x44d",
+          "token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "transfer_log": "0x447",
+          "tx": "0x1d26ffb38ce115feb91ed35c9d73d1bfb1ba36136fb059c1ba1d5d1d55fe6ff1"
+        },
+        "source_tx": "0x966b1f2e6a5deacaa36c62db30ad63a3c0d933b7f1b0fd57842145691b012d46"
+      },
+      "decision_sha256": "9f728f6ec583b40b5bbc963ccab3e0bbfd6ff25caccd7eef2c9ac85fead2dba0",
+      "revision": 1,
+      "stage": "FINALIZED"
+    },
+    "delivery": {
+      "decision": {
+        "bridge_status": "filled",
+        "deposit": {
+          "block_hash": "0x8bf4093bb554a7170da2fa2924decef8e1cfda81f8932cd0c3ae07c64fd5839e",
+          "depositor": "0x3ae28806db12a927f122e8db41663f1678374d94",
+          "exclusive_relayer": "0x000000000000000000000000394311a6aaa0d8e3411d8b62de4578d41322d1bd",
+          "exclusivity_deadline": 1793789895,
+          "fill_deadline": 1793796851,
+          "id": "4875863",
+          "input_amount": "4956250",
+          "input_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "log_index": "0x24",
+          "message_size": 0,
+          "output_amount": "4951764",
+          "output_token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "recipient": "0x3ae28806db12a927f122e8db41663f1678374d94"
+        },
+        "index_url": "https://app.across.to/api/deposit/status?originChainId=1&depositId=4875863",
+        "outcome": "DELIVERED",
+        "reason": "MATCHED_ACROSS_DESTINATION_FILL",
+        "route": "Across / Ethereum to Base",
+        "settlement": {
+          "amount": "4951764",
+          "block_hash": "0x14f81df32866dc8c88405dfb58abdeb2acab4ce129bca0b96dd48d4a17f97a7f",
+          "fill_log": "0xf7",
+          "recipient": "0x3ae28806db12a927f122e8db41663f1678374d94",
+          "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "transfer_log": "0xf8",
+          "tx": "0xf5bd4a57f4515b8f256b7e0e032aa849ba62ad6b4896d468019d7e63ef84227a"
+        },
+        "source_tx": "0xf67d35206c20adcaae8934f0c3d91cb3533dc445ee3ac850aee4d527ecb5df04"
+      },
+      "decision_sha256": "a9f5318549f7d9fae744726279924044a62d6d7f9c66cc0cee4aa56d5a4452fc",
+      "revision": 1,
+      "stage": "FINALIZED"
+    }
+  },
+  "reports": {
+    "replay": {
+      "context_sha256": "5a6a7d99b8a424ebad150f26131833bee8d10e4a97e2a1921f4a9234a1372022",
+      "decision_sha256": "9f728f6ec583b40b5bbc963ccab3e0bbfd6ff25caccd7eef2c9ac85fead2dba0",
+      "deposit_id": "4876368",
+      "evidence_status": "VERIFIED",
+      "interpretation": "STATUS_SUPERSEDED",
+      "label_provenance": "CALLER_ASSERTED",
+      "quote": "The source-chain refund was completed after the failed delivery observation. Ethereum refund transaction 0x1d26ffb38ce115feb91ed35c9d73d1bfb1ba36136fb059c1ba1d5d1d55fe6ff1 returns the full input amount of 295322271 USDT base units to depositor 0x4be66294c6bb5af0da8ad96f186dec0f712979e6 in Across refund bundle 30730. The completed refund supersedes the earlier failed delivery label",
+      "receipt_outcome": "REFUNDED",
+      "report_id": "24aab731d6ecad47bce2644ea5a07688382779f6c6f94b4b83ed2b6fc2901609",
+      "reported_label": "failed",
+      "scope": "DEMO_REPLAY",
+      "source": {
+        "commit": "95fcae345fb9db81684e53809c8d55ed3347e6a4",
+        "repository": "amzar1st/RelayResolve-Cross-chain-transfer-dispute-resolution",
+        "sha256": "f37073f15fb93a0ab9ce5a85d7584f5c70438a95e9673c00c8850aa8df8835cd",
+        "source_type": "DEMO_REPLAY",
+        "url": "https://raw.githubusercontent.com/amzar1st/RelayResolve-Cross-chain-transfer-dispute-resolution/95fcae345fb9db81684e53809c8d55ed3347e6a4/evidence/replays/refund-recovery.md"
+      },
+      "source_tx": "0x966b1f2e6a5deacaa36c62db30ad63a3c0d933b7f1b0fd57842145691b012d46"
+    },
+    "policy": {
+      "context_sha256": "d81a0f1dca76d700d6abf21c1a58ce71f32b575d6be475c6251d5ad03ee3abef",
+      "decision_sha256": "9f728f6ec583b40b5bbc963ccab3e0bbfd6ff25caccd7eef2c9ac85fead2dba0",
+      "deposit_id": "4876368",
+      "evidence_status": "VERIFIED",
+      "interpretation": "CONSISTENT",
+      "label_provenance": "CALLER_ASSERTED",
+      "quote": "`refunded` | Depositor has been refunded on origin chain",
+      "receipt_outcome": "REFUNDED",
+      "report_id": "7563053080e478db581111c2edc2beadf3eb6079a147414e472d5628cbd4d164",
+      "reported_label": "refunded",
+      "scope": "POLICY_ONLY",
+      "source": {
+        "commit": "2b0ffd11824e3c97682ddb491c4ad141c4e0f5d0",
+        "repository": "across-protocol/skills",
+        "sha256": "b684fa9a2ac21c1b141c3be1c577ab19e7f1e71f52ac4675765a65ffa8efb81e",
+        "source_type": "PROTOCOL_DOCUMENT",
+        "url": "https://raw.githubusercontent.com/across-protocol/skills/2b0ffd11824e3c97682ddb491c4ad141c4e0f5d0/skills/tracking-transactions/SKILL.md"
+      },
+      "source_tx": "0x966b1f2e6a5deacaa36c62db30ad63a3c0d933b7f1b0fd57842145691b012d46"
+    }
+  },
+  "rejectedInterpretation": {
+    "hash": "0x3c397c444b233c981346d6f591ca906f1e4b03f6a8943dfd563471f7a334e884",
+    "status": 7,
+    "result": "MAJORITY_DISAGREE",
+    "votes": {
+      "0x045291B293B9D68969c18B6637A8258038cf787A": "disagree",
+      "0x378aED3bA912Ce77C3C66155961A7e61C2fE8F3B": "idle",
+      "0x4868b172ddEBC18b5219aaCeAB77ae0Df330c83A": "disagree",
+      "0xF7D08d12dB37D3e02D1833b5cB7e56B07F114186": "idle",
+      "0xb9ed1258763dfFC83356b15e8A20236B86E42ba2": "disagree"
+    },
+    "reportAbsent": true
+  }
+}

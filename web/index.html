@@ -16,7 +16,7 @@
 <section class="card lookup"><p class="eyebrow">01 / FIND A TRANSFER</p><h2>Case lookup</h2><form id="lookup">
 <label for="hash">Ethereum deposit transaction</label><input id="hash" name="hash" required maxlength="66" spellcheck="false" placeholder="0x…">
 <label for="id">Across deposit ID</label><input id="id" name="id" required maxlength="78" inputmode="numeric" placeholder="4876368">
-<div class="actions"><button class="primary" type="submit">Look up case</button><button id="example" type="button">Load refund example</button></div></form>
+<div class="actions"><button class="primary" type="submit">Look up case</button><button id="example" type="button">Load refund example</button><button id="delivery-example" type="button">Load delivery example</button></div></form>
 <p id="lookup-status" class="muted" role="status"></p>
 </section>
 <section class="card result"><p class="eyebrow">02 / INSPECT THE RECORD</p><div class="result-title"><h2>Resolution</h2><span id="badge" class="pill">NO CASE LOADED</span></div><p id="explanation" class="muted">Look up a deposit to read finalized GenLayer state.</p>
@@ -31,7 +31,17 @@
 <section class="card transactions"><p class="eyebrow">04 / TRACK A WRITE</p><h2>Transaction activity</h2><form id="track-form">
 <label for="track-hash">StudioNet transaction hash</label><input id="track-hash" maxlength="66" spellcheck="false" placeholder="Paste a transaction from Studio" required>
 <button id="track-submit" type="submit">Track transaction</button></form><p id="tx-state" class="muted" role="status">No transaction tracked.</p><a id="tx-link" hidden target="_blank" rel="noopener noreferrer">View transaction ↗</a><button id="resume" hidden>Check again</button><p class="small muted">A submitted or accepted transaction remains pending until its execution is finalized.</p></section>
-</div>
+<section class="card report-card"><p class="eyebrow">05 / RECONCILE THE STATUS</p><h2>Incident &amp; recovery evidence</h2>
+<p class="muted">Compare a reported interface status with the receipt-backed outcome and a versioned document. Validators interpret the document and audit its citation.</p>
+<div class="actions"><button type="button" id="replay-report">Load recovery replay</button><button type="button" id="policy-report">Load Across policy</button></div>
+<form id="report-form">
+<label for="reported-label">Reported interface status · caller assertion</label><select id="reported-label"><option value="failed">Failed</option><option value="expired">Expired</option><option value="pending">Pending</option><option value="received">Received</option><option value="filled">Filled</option><option value="refunded">Refunded</option></select>
+<label for="report-url">Commit-pinned report URL</label><input id="report-url" maxlength="400" spellcheck="false" required>
+<label for="report-sha">Document SHA-256</label><input id="report-sha" maxlength="64" spellcheck="false" required>
+<p id="report-provenance" class="small muted"></p>
+<div class="actions"><button id="report-read" type="button">Read recorded interpretation</button><button id="report-review" type="submit" disabled>Request report review</button></div>
+</form><p id="report-status" class="muted" role="status">Look up a reviewed case first.</p><dl id="report-facts"></dl><blockquote id="report-quote" hidden></blockquote><a id="report-source" hidden target="_blank" rel="noopener noreferrer">View pinned source ↗</a>
+</section></div>
 </main>
 <footer><span>RelayResolve · StudioNet 61999</span><div><a id="contract-link">Contract ↗</a><a href="https://github.com/amzar1st/RelayResolve-Cross-chain-transfer-dispute-resolution">Source ↗</a></div></footer>
 </body>
