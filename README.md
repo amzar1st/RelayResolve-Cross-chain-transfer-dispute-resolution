@@ -6,6 +6,7 @@ RelayResolve resolves Across transfer disputes on the Ethereum-to-Base route. It
 - [Current StudioNet contract](https://explorer-studio.genlayer.com/address/0xBdb03Bdb95C1A33a0348a513Cd6A6b1e2C138B69)
 - [Live verification and transactions](docs/LIVE_VERIFICATION.md)
 - [Project Explorer submission text](docs/SUBMISSION.md)
+- [Milestone v1 evidence export and verification](docs/MILESTONE_V1.md)
 - [Evidence and trust model](docs/SECURITY.md)
 
 ## Workflow

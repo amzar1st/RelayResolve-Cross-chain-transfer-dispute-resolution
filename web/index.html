@@ -41,6 +41,14 @@
 <p id="report-provenance" class="small muted"></p>
 <div class="actions"><button id="report-read" type="button">Read recorded interpretation</button><button id="report-review" type="submit" disabled>Request report review</button></div>
 </form><p id="report-status" class="muted" role="status">Look up a reviewed case first.</p><dl id="report-facts"></dl><blockquote id="report-quote" hidden></blockquote><a id="report-source" hidden target="_blank" rel="noopener noreferrer">View pinned source ↗</a>
+</section>
+<section class="card report-card"><p class="eyebrow">06 / SHARE AND VERIFY</p><h2>Portable case evidence</h2>
+<p class="muted">Download the finalized resolution and any loaded report as JSON. Recipients can verify the packet against finalized StudioNet state without a wallet.</p>
+<div class="actions"><button id="evidence-export" type="button" disabled>Download evidence JSON</button></div>
+<form id="evidence-form"><label for="evidence-file">RelayResolve evidence packet</label>
+<input id="evidence-file" type="file" accept=".json,application/json" required>
+<button id="evidence-verify" type="submit">Verify evidence packet</button></form>
+<p id="evidence-status" class="muted" role="status"></p>
 </section></div>
 </main>
 <footer><span>RelayResolve · StudioNet 61999</span><div><a id="contract-link">Contract ↗</a><a href="https://github.com/amzar1st/RelayResolve-Cross-chain-transfer-dispute-resolution">Source ↗</a></div></footer>

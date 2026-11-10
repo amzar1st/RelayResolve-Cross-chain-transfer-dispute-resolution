@@ -1,0 +1,66 @@
+{
+  "format": "relayresolve-evidence-v1",
+  "chainId": 61999,
+  "contract": "0xBdb03Bdb95C1A33a0348a513Cd6A6b1e2C138B69",
+  "hash": "0x966b1f2e6a5deacaa36c62db30ad63a3c0d933b7f1b0fd57842145691b012d46",
+  "id": "4876368",
+  "record": {
+    "decision": {
+      "bridge_status": "refunded",
+      "deposit": {
+        "block_hash": "0xad12f2f8a64a3cefb41fba749b5d285396536e97a00e371f0131b03f0ea92768",
+        "depositor": "0x4be66294c6bb5af0da8ad96f186dec0f712979e6",
+        "exclusive_relayer": "0x000000000000000000000000fd03abcadaf3f930fa4e37eb2f6ea3a44a41b7f0",
+        "exclusivity_deadline": 1793797707,
+        "fill_deadline": 1793799491,
+        "id": "4876368",
+        "input_amount": "295322271",
+        "input_token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "log_index": "0x1c4",
+        "message_size": 896,
+        "output_amount": "295280805",
+        "output_token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "recipient": "0xb852e653f8fbc099f06dc9d61e269517a4990b73"
+      },
+      "index_url": "https://app.across.to/api/deposit/status?originChainId=1&depositId=4876368",
+      "outcome": "REFUNDED",
+      "reason": "MATCHED_ACROSS_ORIGIN_REFUND",
+      "route": "Across / Ethereum to Base",
+      "settlement": {
+        "amount": "295322271",
+        "block_hash": "0xf228cc803bf8dca073de54b46e022bdac96f02eaa9f4a08a43e90b5c70c891ca",
+        "bundle": "30730",
+        "recipient": "0x4be66294c6bb5af0da8ad96f186dec0f712979e6",
+        "root_log": "0x44d",
+        "token": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "transfer_log": "0x447",
+        "tx": "0x1d26ffb38ce115feb91ed35c9d73d1bfb1ba36136fb059c1ba1d5d1d55fe6ff1"
+      },
+      "source_tx": "0x966b1f2e6a5deacaa36c62db30ad63a3c0d933b7f1b0fd57842145691b012d46"
+    },
+    "decision_sha256": "9f728f6ec583b40b5bbc963ccab3e0bbfd6ff25caccd7eef2c9ac85fead2dba0",
+    "revision": 1,
+    "stage": "FINALIZED"
+  },
+  "report": {
+    "context_sha256": "5a6a7d99b8a424ebad150f26131833bee8d10e4a97e2a1921f4a9234a1372022",
+    "decision_sha256": "9f728f6ec583b40b5bbc963ccab3e0bbfd6ff25caccd7eef2c9ac85fead2dba0",
+    "deposit_id": "4876368",
+    "evidence_status": "VERIFIED",
+    "interpretation": "STATUS_SUPERSEDED",
+    "label_provenance": "CALLER_ASSERTED",
+    "quote": "The source-chain refund was completed after the failed delivery observation. Ethereum refund transaction 0x1d26ffb38ce115feb91ed35c9d73d1bfb1ba36136fb059c1ba1d5d1d55fe6ff1 returns the full input amount of 295322271 USDT base units to depositor 0x4be66294c6bb5af0da8ad96f186dec0f712979e6 in Across refund bundle 30730. The completed refund supersedes the earlier failed delivery label",
+    "receipt_outcome": "REFUNDED",
+    "report_id": "24aab731d6ecad47bce2644ea5a07688382779f6c6f94b4b83ed2b6fc2901609",
+    "reported_label": "failed",
+    "scope": "DEMO_REPLAY",
+    "source": {
+      "commit": "95fcae345fb9db81684e53809c8d55ed3347e6a4",
+      "repository": "amzar1st/RelayResolve-Cross-chain-transfer-dispute-resolution",
+      "sha256": "f37073f15fb93a0ab9ce5a85d7584f5c70438a95e9673c00c8850aa8df8835cd",
+      "source_type": "DEMO_REPLAY",
+      "url": "https://raw.githubusercontent.com/amzar1st/RelayResolve-Cross-chain-transfer-dispute-resolution/95fcae345fb9db81684e53809c8d55ed3347e6a4/evidence/replays/refund-recovery.md"
+    },
+    "source_tx": "0x966b1f2e6a5deacaa36c62db30ad63a3c0d933b7f1b0fd57842145691b012d46"
+  }
+}

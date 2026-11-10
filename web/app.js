@@ -1,4 +1,5 @@
 import { deployment } from './deployment.js';
+import { evidenceLimit, evidencePacket, verifyEvidence } from './evidence.js';
 import { reportSources } from './reports.js';
 import { follow, readCase, readReport, reportId, submit, testSigner, validHash } from './chain.js';
 
@@ -40,6 +41,7 @@ function buttons() {
   byId('report-review').disabled = !enabled || !active.record?.decision || Boolean(currentReport);
   byId('report-read').disabled = busy || !active?.record?.decision;
   byId('delivery-example').disabled = busy;
+  byId('evidence-export').disabled = active?.record?.stage !== 'FINALIZED';
 }
 
 function link(container, label, url) {
@@ -324,5 +326,46 @@ byId('delivery-example').addEventListener('click', () => {
   active = undefined;
   selectReport('policy');
   void lookup();
+});
+byId('evidence-export').addEventListener('click', () => {
+  if (active?.record?.stage !== 'FINALIZED') return;
+  const status = byId('evidence-status');
+  const data = JSON.stringify(evidencePacket(active, currentReport ?? null), null, 2);
+  const blob = new Blob([data], { type: 'application/json' });
+  if (blob.size > evidenceLimit) {
+    status.textContent = 'This packet exceeds the 64 KiB evidence limit.';
+    return;
+  }
+  const url = URL.createObjectURL(blob);
+  const download = document.createElement('a');
+  download.href = url;
+  download.download = `relayresolve-${active.id}.json`;
+  download.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  status.textContent = currentReport ? 'Downloaded finalized case and loaded report.' : 'Downloaded finalized case.';
+});
+
+byId('evidence-form').addEventListener('submit', async event => {
+  event.preventDefault();
+  const input = byId('evidence-file');
+  const file = input.files[0];
+  if (!file) return;
+  const status = byId('evidence-status');
+  if (file.size > evidenceLimit) {
+    status.textContent = 'Choose a JSON evidence packet of 64 KiB or less.';
+    return;
+  }
+  const button = byId('evidence-verify');
+  button.disabled = input.disabled = true;
+  status.textContent = 'Checking fingerprints and reading finalized StudioNet state…';
+  try {
+    const result = await verifyEvidence(JSON.parse(await file.text()));
+    const report = result.report ? ` and report ${result.report.interpretation} (${result.report.scope})` : '';
+    status.textContent = `Verified deposit ${result.id}: ${result.record.decision.outcome}${report}. Packet matches finalized StudioNet state.`;
+  } catch (error) {
+    status.textContent = `Verification failed. ${error.shortMessage ?? error.message}`;
+  } finally {
+    button.disabled = input.disabled = false;
+  }
 });
 void example();

@@ -1,0 +1,45 @@
+{
+  "format": "relayresolve-evidence-v1",
+  "chainId": 61999,
+  "contract": "0xBdb03Bdb95C1A33a0348a513Cd6A6b1e2C138B69",
+  "hash": "0xf67d35206c20adcaae8934f0c3d91cb3533dc445ee3ac850aee4d527ecb5df04",
+  "id": "4875863",
+  "record": {
+    "decision": {
+      "bridge_status": "filled",
+      "deposit": {
+        "block_hash": "0x8bf4093bb554a7170da2fa2924decef8e1cfda81f8932cd0c3ae07c64fd5839e",
+        "depositor": "0x3ae28806db12a927f122e8db41663f1678374d94",
+        "exclusive_relayer": "0x000000000000000000000000394311a6aaa0d8e3411d8b62de4578d41322d1bd",
+        "exclusivity_deadline": 1793789895,
+        "fill_deadline": 1793796851,
+        "id": "4875863",
+        "input_amount": "4956250",
+        "input_token": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "log_index": "0x24",
+        "message_size": 0,
+        "output_amount": "4951764",
+        "output_token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "recipient": "0x3ae28806db12a927f122e8db41663f1678374d94"
+      },
+      "index_url": "https://app.across.to/api/deposit/status?originChainId=1&depositId=4875863",
+      "outcome": "DELIVERED",
+      "reason": "MATCHED_ACROSS_DESTINATION_FILL",
+      "route": "Across / Ethereum to Base",
+      "settlement": {
+        "amount": "4951764",
+        "block_hash": "0x14f81df32866dc8c88405dfb58abdeb2acab4ce129bca0b96dd48d4a17f97a7f",
+        "fill_log": "0xf7",
+        "recipient": "0x3ae28806db12a927f122e8db41663f1678374d94",
+        "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "transfer_log": "0xf8",
+        "tx": "0xf5bd4a57f4515b8f256b7e0e032aa849ba62ad6b4896d468019d7e63ef84227a"
+      },
+      "source_tx": "0xf67d35206c20adcaae8934f0c3d91cb3533dc445ee3ac850aee4d527ecb5df04"
+    },
+    "decision_sha256": "a9f5318549f7d9fae744726279924044a62d6d7f9c66cc0cee4aa56d5a4452fc",
+    "revision": 1,
+    "stage": "FINALIZED"
+  },
+  "report": null
+}
